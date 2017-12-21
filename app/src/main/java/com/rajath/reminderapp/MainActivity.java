@@ -13,5 +13,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
+        //Its working right?
     }
 }
