@@ -16,10 +16,7 @@ public class MainActivity extends AppCompatActivity {
         //Its working right?
     }
 
-    public void  fun2(){
 
-        String test3="test3";
-        int j =5;
     }
 
 
