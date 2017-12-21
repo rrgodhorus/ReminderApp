@@ -15,4 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //Its working right?
     }
+
+    public void fun1(){
+        int i=1;
+        String test = "test";
+    }
+
+
 }
