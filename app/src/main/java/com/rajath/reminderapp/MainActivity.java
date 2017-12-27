@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             int id = item.getItemId();
 
             //noinspection SimplifiableIfStatement
-            if (id == R.id.action_favorite) {
+            if (id == R.id.search) {
                 Toast.makeText(MainActivity.this, "Action clicked", Toast.LENGTH_LONG).show();
                 return true;
             }
