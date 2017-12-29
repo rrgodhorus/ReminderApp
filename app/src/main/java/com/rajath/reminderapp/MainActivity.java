@@ -2,6 +2,7 @@ package com.rajath.reminderapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -23,9 +24,19 @@ public class MainActivity extends AppCompatActivity {
         add = findViewById(R.id.btn_add);
         toolbar.setLogo(R.drawable.ic_launcher);
         setSupportActionBar(toolbar);
+
         recview = findViewById(R.id.rv);
 
+        Tasks[] tasks = new Tasks[50];
 
+
+        for(int i=0;i<50;++i){
+            tasks[i] = new Tasks("Sample "+i);
+        }
+
+        Adapter adapter = new Adapter(tasks);
+        recview.setAdapter(adapter);
+        recview.setLayoutManager(new LinearLayoutManager(this));
 
 
 

@@ -7,7 +7,8 @@ public class Tasks {
      String taskdesc;
      boolean checked;
 
-    public Tasks(){
+    public Tasks(String s){
+        taskdesc =s;
         checked = false;
 
     }
