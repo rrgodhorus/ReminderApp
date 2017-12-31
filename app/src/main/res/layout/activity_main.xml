@@ -17,7 +17,7 @@
         android:layout_height="?attr/actionBarSize"
         style = "@style/HeaderBar"
         android:background="@color/colorPrimary"
-        android:elevation="4dp"
+        android:elevation="40dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         />
@@ -25,13 +25,16 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            >
 
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="#cccccc">
 
             </android.support.v7.widget.RecyclerView>
 
@@ -52,7 +55,7 @@
                     android:background="@android:color/transparent"
                     android:clickable="true"
                     android:contentDescription="Add new reminder"
-                    android:elevation="0dp"
+                    android:elevation="20dp"
                     android:focusable="true"
                     android:src="@drawable/btn0_res1" />
             </RelativeLayout>

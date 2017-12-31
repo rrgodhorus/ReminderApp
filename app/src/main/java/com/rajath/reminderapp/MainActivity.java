@@ -1,5 +1,6 @@
 package com.rajath.reminderapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.CheckedTextView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -16,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
      Toolbar toolbar;
      ImageButton add;
      RecyclerView recview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,13 +36,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         for(int i=0;i<50;++i){
-            tasks[i] = new Tasks("Sample "+i);
+            tasks[i] = new Tasks("Sample ",i);
         }
 
         Adapter adapter = new Adapter(tasks);
         recview.setAdapter(adapter);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
+
+
+         add.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 startActivity(new Intent(MainActivity.this,AddTask.class));
+             }
+         });
 
 
 
@@ -61,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
             if (id == R.id.search) {
                 Toast.makeText(MainActivity.this, "Action clicked", Toast.LENGTH_LONG).show();
                 return true;
+
+
             }
 
             return super.onOptionsItemSelected(item);

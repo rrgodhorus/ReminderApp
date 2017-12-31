@@ -2,14 +2,18 @@ package com.rajath.reminderapp;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.CheckedTextView;
+import android.widget.CheckBox;
+import android.widget.TextView;
 
 
 public class ViewHolder extends RecyclerView.ViewHolder {
 
-    CheckedTextView chk1;
+    CheckBox chkbx;
+    TextView tv1;
+    int id;
     public ViewHolder(View itemView) {
         super(itemView);
-        chk1 = itemView.findViewById(R.id.chkdtxt);
+        chkbx = itemView.findViewById(R.id.chk1);
+        tv1 = itemView.findViewById(R.id.tv);
     }
 }
