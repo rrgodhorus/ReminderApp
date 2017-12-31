@@ -2,4 +2,9 @@
     <string name="app_name">ReminderApp</string>
     <string name="search">User</string>
     <string name="new_task">New Task</string>
+    <string name="new_task_txtview1"><b>What is to be done ?</b></string>
+    <string name="new_task_edttxt1">Enter Task Here</string>
+    <string name="new_task_txtview2"><b>Due Date</b></string>
+    <string name="new_task_edttxt2">Due Date</string>
+    <string name="new_task_edttxt3">Time Not Set (All Day)</string>
 </resources>

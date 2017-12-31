@@ -41,16 +41,18 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final int pos = position;
+        //final int pos = position;
         holder.tv1.setText(tasks[position].taskdesc+position);
-        holder.chkbx.setChecked(tasks[position].checked);
+        //holder.chkbx.setChecked(tasks[position].checked);
         holder.id = position;
         tasks[position].id = position;
+        final int pos = holder.getAdapterPosition();
         holder.tv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((TextView) v).setText("YESSSS");
+                ((TextView) v).setText("Checking..");
                 tasks[pos].taskdesc = "Set";
+
             }
         });
         //holder.chkbx.setOnCheckedChangeListener();

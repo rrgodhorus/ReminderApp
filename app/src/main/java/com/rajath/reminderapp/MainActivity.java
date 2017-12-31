@@ -8,9 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.CheckedTextView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -21,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
      ImageButton add;
      RecyclerView recview;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         add = findViewById(R.id.btn_add);
         toolbar.setLogo(R.drawable.ic_launcher);
         setSupportActionBar(toolbar);
-
         recview = findViewById(R.id.rv);
 
         Tasks[] tasks = new Tasks[50];
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
          add.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 startActivity(new Intent(MainActivity.this,AddTask.class));
+                 startActivity(new Intent(MainActivity.this,NewTask.class));
              }
          });
 
