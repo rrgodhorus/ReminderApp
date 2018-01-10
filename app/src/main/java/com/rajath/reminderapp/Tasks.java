@@ -1,21 +1,25 @@
 package com.rajath.reminderapp;
 
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.Date;
 
-public class Tasks {
+public class Tasks implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     int id;
     String taskdesc;
     boolean checked;
-    Date date;
+    String date;
+    String time;
 
-    public Tasks(String s,int id1){
+    public Tasks(int id1,String tsk ,boolean chkd, String dt,String tm){
         id = id1;
-        taskdesc = s;
-        checked = false;
-        date = null;
+        taskdesc = tsk;
+        checked = chkd;
+        date = dt;
+        time = tm;
 
     }
     public Tasks(int id1){
@@ -26,5 +30,11 @@ public class Tasks {
     }
    // public String setTask(){
 
-    //}
+    @Override
+    public String toString() {
+        return super.toString();
+        //return "Tasks[id=" + id + ", taskdesc=" +
+    }
+
+
 }

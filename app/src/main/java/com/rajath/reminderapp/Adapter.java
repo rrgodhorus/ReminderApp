@@ -1,19 +1,24 @@
 package com.rajath.reminderapp;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
     Tasks[] tasks;
+    Context context;
 
-
-    public Adapter(Tasks[] tasksArrray){
+    public Adapter(Tasks[] tasksArrray,Context ctx){
         tasks = tasksArrray;
+        context = ctx;
 
     }
 
@@ -41,26 +46,29 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        //final int pos = position;
-        holder.tv1.setText(tasks[position].taskdesc+position);
+        holder.tv1.setText(tasks[position].taskdesc);
         //holder.chkbx.setChecked(tasks[position].checked);
-        holder.id = position;
-        tasks[position].id = position;
-        final int pos = holder.getAdapterPosition();
-        holder.tv1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((TextView) v).setText("Checking..");
-                tasks[pos].taskdesc = "Set";
+        holder.id = tasks[position].id;
+        final int pos = holder.id;
+        //int pos = holder.getAdapterPosition();
+       holder.tv1.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(context,NewTask.class);
+               intent.putExtra("edit","true");
+               intent.putExtra("id",pos);
+               context.startActivity(intent);
 
-            }
-        });
+           }
+       });
         //holder.chkbx.setOnCheckedChangeListener();
 
     }
 
     @Override
     public int getItemCount() {
-        return tasks.length;
+        if(tasks == null)
+        return 0;
+        else return tasks.length;
     }
 }

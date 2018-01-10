@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ReminderApp</string>
     <string name="search">User</string>
+    <string name="save">Save Task</string>
     <string name="new_task">New Task</string>
     <string name="new_task_txtview1"><b>What is to be done ?</b></string>
     <string name="new_task_edttxt1">Enter Task Here</string>
